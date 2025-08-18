@@ -1,0 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    /* near-black */
+    color: #e5e5e5;
+    /* light gray text */
+}
+
+/* Banner/Header */
+.banner {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    /* taller banner */
+    font-size: 2rem;
+    /* larger text */
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Horizontal Boxes Section */
+.info-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    /* allows wrapping on small screens */
+    max-width: 1200px;
+}
+
+.box {
+    background-color: #1a1a1a;
+    /* dark gray */
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 220px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    color: #e5e5e5;
+    /* light text inside */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    /* brighter blue */
+    box-shadow: 0 0 20px #3b82f6;
+    /* blue glow */
+}
+
+/* Server List */
+.server-list {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #1a1a1a;
+    /* dark background */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.server-list h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: #60a5fa;
+    /* lighter blue for header text */
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 5px;
+}
+
+.server-list ul {
+    list-style: none;
+}
+
+.server-list li {
+    position: relative;
+    padding: 20px;
+    /* taller rows */
+    border-bottom: 1px solid #333;
+    color: #d4d4d4;
+    transition: background 0.2s ease, box-shadow 0.3s ease;
+}
+
+.server-list li:last-child {
+    border-bottom: none;
+}
+
+.server-list li:hover {
+    background-color: #2a2a2a;
+    cursor: pointer;
+    box-shadow: 0 0 15px #3b82f6;
+    /* blue glow */
+}
+
+/* IP address hidden by default */
+.server-list .ip {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #60a5fa;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.4s ease, text-shadow 0.3s ease;
+    pointer-events: none;
+    /* disabled until visible */
+}
+
+/* Show IP on hover with fade-in */
+.server-list li:hover .ip {
+    opacity: 1;
+    pointer-events: auto;
+    /* re-enable click */
+}
+
+/* Glow + clickable effect on hover */
+.server-list .ip:hover {
+    text-shadow: 0 0 8px #3b82f6, 0 0 15px #3b82f6;
+    cursor: pointer;
+    text-decoration: underline;
+}
