@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CSRV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h2>CS Server Browser</h2>
+                <p>Connect to the best Counter-Strike servers</p>
+            </div>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" id="loginTab">LOG IN</div>
+                <div class="auth-tab" id="registerTab">REGISTER</div>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+                <div class="auth-form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="auth-input" placeholder="Username or Email" required>
+                </div>
+                <div class="auth-form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="auth-input" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-submit">LOG IN</button>
+                <div class="auth-footer">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+
+            <form class="auth-form hidden" id="registerForm">
+                <div class="auth-form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="auth-input" placeholder="Username" required>
+                </div>
+                <div class="auth-form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" class="auth-input" placeholder="Email" required>
+                </div>
+                <div class="auth-form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="auth-input" placeholder="Password" required>
+                </div>
+                <div class="auth-form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="auth-input" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="auth-submit">CREATE ACCOUNT</button>
+                <div class="auth-footer">
+                    By registering, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </div>
+            </form>
+
+            <div class="auth-divider">
+                <span>OR CONTINUE WITH</span>
+            </div>
+            
+            <div class="auth-oauth">
+                <a href="#" class="auth-oauth-btn steam">
+                    <i class="fab fa-steam"></i>
+                </a>
+                <a href="#" class="auth-oauth-btn google">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="auth-oauth-btn discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Switch between login register
+        const loginTab = document.getElementById('loginTab');
+        const registerTab = document.getElementById('registerTab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        loginTab.addEventListener('click', () => {
+            loginTab.classList.add('active');
+            registerTab.classList.remove('active');
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerTab.classList.add('active');
+            loginTab.classList.remove('active');
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        });
+
+        // check URL for register parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('register')) {
+            registerTab.click();
+        }
+
+        // form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // no login logic yet
+            window.location.href = 'index.html';
+        });
+
+        registerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // no reg logic either
+            alert('Account created successfully!');
+            loginTab.click();
+        });
+    </script>
+</body>
+</html>
