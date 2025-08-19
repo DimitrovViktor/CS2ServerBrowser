@@ -309,7 +309,7 @@ header {
 
 .server-header {
     display: grid;
-    grid-template-columns: 3fr 1.5fr 1fr 1fr 100px 50px;
+    grid-template-columns: 0.5fr 2fr 2fr 1fr 1fr 100px 50px;
     padding: 15px 20px;
     background: var(--bg-quaternary);
     border-radius: var(--border-radius);
@@ -321,7 +321,7 @@ header {
 
 .server-row {
     display: grid;
-    grid-template-columns: 3fr 1.5fr 1fr 1fr 100px 50px;
+    grid-template-columns: 3fr 2.5fr 2fr 1.5fr 100px 50px;
     background: var(--bg-secondary);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
@@ -512,6 +512,7 @@ header {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -692,7 +693,18 @@ header {
     position: relative;
 }
 
-.server-count, .player-count, .mode-name {
+.server-count {
+    margin-top: 15px;
+    color: var(--text-secondary);
+}
+
+.player-count {
+    margin-top: 3px;
+    color: var(--text-secondary);
+
+}
+
+.mode-name {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -838,7 +850,10 @@ footer {
         margin-bottom: 10px;
     }
 
-    .map-info, .player-count, .join-btn, .expand-btn {
+    .map-info,
+    .player-count,
+    .join-btn,
+    .expand-btn {
         padding: 8px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -846,15 +861,15 @@ footer {
     .search-box input {
         width: 200px;
     }
-    
+
     .controls {
         gap: 10px;
     }
-    
+
     .container {
         margin-top: 160px;
     }
-    
+
     .sticky-header {
         top: 10px;
         left: 10px;
@@ -877,13 +892,13 @@ footer {
         width: calc(50% - 30px);
         height: 140px;
     }
-    
+
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
+
     .footer-links {
         align-items: center;
     }
