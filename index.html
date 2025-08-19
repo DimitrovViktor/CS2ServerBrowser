@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS Server Browser</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>CSRV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -34,15 +34,18 @@
                     <i class="fas fa-chart-bar"></i>
                 </button>
                 <div class="user-controls">
-                    <button class="login-btn">LOGIN</button>
-                    <button class="profile-btn">
+                    <button class="profile-btn" id="profileBtn">
                         <i class="fas fa-user"></i>
                     </button>
+                    <div class="profile-menu hidden" id="profileMenu">
+                        <button class="login-menu-btn" onclick="window.location.href='auth.html'"><i class="fas fa-sign-in-alt"></i> Log In</button>
+                        <button class="register-menu-btn" onclick="window.location.href='auth.html?register'"><i class="fas fa-user-plus"></i> Register</button>
+                        <button class="settings-menu-btn"><i class="fas fa-cog"></i> Settings</button>
+                    </div>
                 </div>
             </div>
         </header>
     </div>
-
 
     <div class="container">
         <!-- Info Boxes Section -->
@@ -50,30 +53,80 @@
             <div class="box">
                 <div class="box-content">
                     <div class="box-text">Deathmatch</div>
+                    <div class="box-stats">
+                        <div class="server-count">
+                            <i class="fas fa-server"></i>
+                            <span>42</span>
+                        </div>
+                        <div class="player-count">
+                            <i class="fas fa-user"></i>
+                            <span>128</span>
+                        </div>
+                    </div>
                     <img src="images/test.png" alt="Deathmatch" class="box-image">
                 </div>
             </div>
             <div class="box">
                 <div class="box-content">
                     <div class="box-text">Retake</div>
+                    <div class="box-stats">
+                        <div class="server-count">
+                            <i class="fas fa-server"></i>
+                            <span>38</span>
+                        </div>
+                        <div class="player-count">
+                            <i class="fas fa-user"></i>
+                            <span>112</span>
+                        </div>
+                    </div>
                     <img src="images/test.png" alt="Retake" class="box-image">
                 </div>
             </div>
             <div class="box">
                 <div class="box-content">
                     <div class="box-text">5v5</div>
+                    <div class="box-stats">
+                        <div class="server-count">
+                            <i class="fas fa-server"></i>
+                            <span>65</span>
+                        </div>
+                        <div class="player-count">
+                            <i class="fas fa-user"></i>
+                            <span>210</span>
+                        </div>
+                    </div>
                     <img src="images/test.png" alt="5v5" class="box-image">
                 </div>
             </div>
             <div class="box">
                 <div class="box-content">
                     <div class="box-text">Surf</div>
+                    <div class="box-stats">
+                        <div class="server-count">
+                            <i class="fas fa-server"></i>
+                            <span>28</span>
+                        </div>
+                        <div class="player-count">
+                            <i class="fas fa-user"></i>
+                            <span>89</span>
+                        </div>
+                    </div>
                     <img src="images/test.png" alt="Surf" class="box-image">
                 </div>
             </div>
             <div class="box">
                 <div class="box-content">
                     <div class="box-text">Bhop</div>
+                    <div class="box-stats">
+                        <div class="server-count">
+                            <i class="fas fa-server"></i>
+                            <span>31</span>
+                        </div>
+                        <div class="player-count">
+                            <i class="fas fa-user"></i>
+                            <span>104</span>
+                        </div>
+                    </div>
                     <img src="images/test.png" alt="Bhop" class="box-image">
                 </div>
             </div>
@@ -88,6 +141,7 @@
             </div>
             <div class="server-list">
                 <div class="server-header">
+                    <div class="header-likes"></div>
                     <div>SERVER</div>
                     <div>MAP</div>
                     <div>MODE</div>
@@ -111,13 +165,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>de_mirage</div>
                     </div>
-                    <div>Competitive</div>
+                    <div class="mode-name">Competitive</div>
                     <div class="player-count">
                         <span>18/20</span>
                         <div class="progress-bar">
@@ -161,13 +215,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>de_nuke</div>
                     </div>
-                    <div>Wingman</div>
+                    <div class="mode-name">Wingman</div>
                     <div class="player-count">
                         <span>3/4</span>
                         <div class="progress-bar">
@@ -210,13 +264,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>de_inferno</div>
                     </div>
-                    <div>Retakes</div>
+                    <div class="mode-name">Retakes</div>
                     <div class="player-count">
                         <span>10/10</span>
                         <div class="progress-bar">
@@ -259,13 +313,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>de_ancient</div>
                     </div>
-                    <div>Competitive</div>
+                    <div class="mode-name">Competitive</div>
                     <div class="player-count">
                         <span>8/10</span>
                         <div class="progress-bar">
@@ -304,6 +358,7 @@
             </div>
             <div class="server-list">
                 <div class="server-header">
+                    <div class="header-likes"></div>
                     <div>SERVER</div>
                     <div>MAP</div>
                     <div>MODE</div>
@@ -327,13 +382,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>de_dust2</div>
                     </div>
-                    <div>Deathmatch</div>
+                    <div class="mode-name">Deathmatch</div>
                     <div class="player-count">
                         <span>14/16</span>
                         <div class="progress-bar">
@@ -376,13 +431,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>aim_map</div>
                     </div>
-                    <div>Arena</div>
+                    <div class="mode-name">Arena</div>
                     <div class="player-count">
                         <span>7/8</span>
                         <div class="progress-bar">
@@ -425,13 +480,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>de_vertigo</div>
                     </div>
-                    <div>Casual</div>
+                    <div class="mode-name">Casual</div>
                     <div class="player-count">
                         <span>14/20</span>
                         <div class="progress-bar">
@@ -474,13 +529,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="map-info">
+                    <div class="map-info" style="--map-image: url('images/map1.jpg')">
                         <div class="map-icon">
                             <i class="fas fa-map"></i>
                         </div>
                         <div>surf_utopia</div>
                     </div>
-                    <div>Surf</div>
+                    <div class="mode-name">Surf</div>
                     <div class="player-count">
                         <span>9/16</span>
                         <div class="progress-bar">
@@ -517,7 +572,6 @@
             <button>4</button>
             <button>5</button>
             <button><i class="fas fa-chevron-right"></i></button>
-
         </div>
     </div>
 
@@ -536,23 +590,40 @@
         </div>
     </div>
 
-    <script>
-        // Toggle stats bar visibility
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-server"></i>
+                <span>CS Server Browser</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-steam"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 CSRV. All rights reserved. Counter-Strike is a registered trademark of Valve Corporation.
+        </div>
+    </footer>
 
+    <script>
         document.getElementById('toggleStats').addEventListener('click', function() {
             const statsBar = document.getElementById('statsBar');
             statsBar.classList.toggle('hidden');
         });
 
-        // Server expand/collapse functionality
-
         function toggleExpand(button) {
             const serverRow = button.closest('.server-row');
             serverRow.classList.toggle('expanded');
             
-            // Update the icon
-
-
             const icon = button.querySelector('i');
             if (serverRow.classList.contains('expanded')) {
                 icon.classList.remove('fa-chevron-down');
@@ -563,12 +634,8 @@
             }
         }
 
-        // Copy IP to clipboard
-
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                
-                // Alert user IP is copied
                 const originalText = event.target.closest('.server-ip').innerText;
                 event.target.closest('.server-ip').innerHTML = 'Copied! <i class="fas fa-check"></i>';
                 
@@ -580,7 +647,6 @@
             });
         }
 
-        // Fake playercount updates for preview
         setInterval(() => {
             const players = document.querySelectorAll('.player-count span');
             players.forEach(player => {
@@ -598,7 +664,6 @@
             });
         }, 5000);
         
-        // Make stats bar sticky
         window.addEventListener('scroll', function() {
             const statsBar = document.getElementById('statsBar');
             const header = document.querySelector('.sticky-header');
@@ -615,6 +680,21 @@
                 statsBar.style.top = 'auto';
                 statsBar.style.left = 'auto';
                 statsBar.style.right = 'auto';
+            }
+        });
+
+        // Profile menu toggle
+        document.getElementById('profileBtn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // close menu when clicking elsewhere
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('profileMenu');
+            if (!menu.contains(e.target) && !e.target.closest('.profile-btn')) {
+                menu.classList.add('hidden');
             }
         });
     </script>
