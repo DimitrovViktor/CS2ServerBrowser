@@ -1,39 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Browser</title>
+    <title>CS Server Browser</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Banner/Header -->
-    <header class="banner">
-        <h1>This will be a png banner probably</h1>
-    </header>
+    <div class="sticky-header">
+        <header>
+            <div style="display: flex; align-items: center;">
+                <div class="logo">
+                    <i class="fas fa-server"></i>
+                    <h1>CS Server Browser</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Servers</a>
+                    <a href="#">My Servers</a>
+                    <a href="#">Options</a>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search servers...">
+                </div>
+                <button class="filter-btn">
+                    <i class="fas fa-filter"></i>
+                </button>
+                <button class="toggle-stats-btn" id="toggleStats">
+                    <i class="fas fa-chart-bar"></i>
+                </button>
+                <div class="user-controls">
+                    <button class="login-btn">LOGIN</button>
+                    <button class="profile-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
 
-    <!-- Horizontal Boxes Section -->
-    <section class="info-boxes">
-        <div class="box">Death Match</div>
-        <div class="box">Retake</div>
-        <div class="box">5v5</div>
-        <div class="box">Surf</div>
-        <div class="box">Bhop</div>
-    </section>
 
-    <!-- Server List Section -->
-    <section class="server-list">
-        <h2>Available Servers</h2>
-        <ul>
-            <li>Server 1 <a href="#" class="ip">Connect: 192.168.1.101</a></li>
-            <li>Server 2 <a href="#" class="ip">Connect: 192.168.1.102</a></li>
-            <li>Server 3 <a href="#" class="ip">Connect: 192.168.1.103</a></li>
-            <li>Server 4 <a href="#" class="ip">Connect: 192.168.1.104</a></li>
-            <li>Server 5 <a href="#" class="ip">Connect: 192.168.1.105</a></li>
-        </ul>
-    </section>
+    <div class="container">
+        <!-- Info Boxes Section -->
+        <section class="info-boxes">
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-text">Deathmatch</div>
+                    <img src="images/test.png" alt="Deathmatch" class="box-image">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-text">Retake</div>
+                    <img src="images/test.png" alt="Retake" class="box-image">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-text">5v5</div>
+                    <img src="images/test.png" alt="5v5" class="box-image">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-text">Surf</div>
+                    <img src="images/test.png" alt="Surf" class="box-image">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <div class="box-text">Bhop</div>
+                    <img src="images/test.png" alt="Bhop" class="box-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Servers Section -->
+        <div class="server-section">
+            <div class="section-header">
+                <i class="fas fa-crown"></i>
+                <h2>Premium Servers</h2>
+                <div class="badge">VIP ACCESS</div>
+            </div>
+            <div class="server-list">
+                <div class="server-header">
+                    <div>SERVER</div>
+                    <div>MAP</div>
+                    <div>MODE</div>
+                    <div>PLAYERS</div>
+                    <div>ACTION</div>
+                    <div></div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 312
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/eu.png" class="flag"> Official EU #1 | Competitive</h3>
+                            <div class="server-ip" onclick="copyToClipboard('csgo-eu1.valve.net:27015')">
+                                csgo-eu1.valve.net:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>de_mirage</div>
+                    </div>
+                    <div>Competitive</div>
+                    <div class="player-count">
+                        <span>18/20</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner"></div>
+                        <p class="server-description">
+                            Official Valve competitive server with 128-tick rate, VAC secured, and premium matchmaking. 
+                            This server features low latency and dedicated resources for the best competitive experience.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">128-Tick</div>
+                            <div class="tag">VAC Secured</div>
+                            <div class="tag">Low Latency</div>
+                            <div class="tag">Competitive</div>
+                            <div class="tag">Prime</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 289
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/us.png" class="flag"> VAC Secure #12 | Wingman</h3>
+                            <div class="server-ip" onclick="copyToClipboard('csgo-na1.valve.net:27015')">
+                                csgo-na1.valve.net:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>de_nuke</div>
+                    </div>
+                    <div>Wingman</div>
+                    <div class="player-count">
+                        <span>3/4</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #1e3c72, #2a5298);"></div>
+                        <p class="server-description">
+                            Premium Wingman server with competitive settings and VAC security. Perfect for 2v2 matches 
+                            with friends. Features map rotations and dedicated anti-cheat.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">2v2</div>
+                            <div class="tag">VAC Secured</div>
+                            <div class="tag">Competitive</div>
+                            <div class="tag">Short Matches</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 267
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-bomb"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/de.png" class="flag"> Retake EU #7</h3>
+                            <div class="server-ip" onclick="copyToClipboard('retake-eu7.csgo.net:27015')">
+                                retake-eu7.csgo.net:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>de_inferno</div>
+                    </div>
+                    <div>Retakes</div>
+                    <div class="player-count">
+                        <span>10/10</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button class="full">FULL</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #0f9b0f, #3cba92);"></div>
+                        <p class="server-description">
+                            Premium retake server with competitive settings. Practice your retake skills with instant respawns 
+                            and weapon upgrades. Features 128-tick rate and dedicated admin support.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">Retakes</div>
+                            <div class="tag">128-Tick</div>
+                            <div class="tag">Skill Training</div>
+                            <div class="tag">VIP Only</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 301
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/gb.png" class="flag"> Elite UK #3 | 5v5</h3>
+                            <div class="server-ip" onclick="copyToClipboard('elite-uk3.csgo.net:27015')">
+                                elite-uk3.csgo.net:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>de_ancient</div>
+                    </div>
+                    <div>Competitive</div>
+                    <div class="player-count">
+                        <span>8/10</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #8e0e00, #1f1c18);"></div>
+                        <p class="server-description">
+                            Premium competitive server for serious players. Features 128-tick rate, advanced stats tracking, 
+                            and regular tournaments with prize pools. Requires Prime status.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">Competitive</div>
+                            <div class="tag">128-Tick</div>
+                            <div class="tag">Tournaments</div>
+                            <div class="tag">Prime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Servers Section -->
+        <div class="server-section">
+            <div class="section-header">
+                <i class="fas fa-users"></i>
+                <h2>Community Servers</h2>
+                <div class="badge">TOP RATED</div>
+            </div>
+            <div class="server-list">
+                <div class="server-header">
+                    <div>SERVER</div>
+                    <div>MAP</div>
+                    <div>MODE</div>
+                    <div>PLAYERS</div>
+                    <div>ACTION</div>
+                    <div></div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 248
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/pl.png" class="flag"> FragZone #42 | Deathmatch</h3>
+                            <div class="server-ip" onclick="copyToClipboard('fragzone.pl:27015')">
+                                fragzone.pl:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>de_dust2</div>
+                    </div>
+                    <div>Deathmatch</div>
+                    <div class="player-count">
+                        <span>14/16</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #3a7bd5, #00d2ff);"></div>
+                        <p class="server-description">
+                            Fast-paced deathmatch server with weapon respawns and instant action. Perfect for warming up 
+                            before competitive matches. Features custom weapon loadouts and headshot-only mode.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">Deathmatch</div>
+                            <div class="tag">Warmup</div>
+                            <div class="tag">Headshot Only</div>
+                            <div class="tag">FFA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 187
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/br.png" class="flag"> 1v1 Arena | Headshot Only</h3>
+                            <div class="server-ip" onclick="copyToClipboard('arena.br.csgo:27015')">
+                                arena.br.csgo:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>aim_map</div>
+                    </div>
+                    <div>Arena</div>
+                    <div class="player-count">
+                        <span>7/8</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #ff416c, #ff4b2b);"></div>
+                        <p class="server-description">
+                            Competitive 1v1 arena with headshot-only mode. Challenge players to duels and climb the 
+                            leaderboard. Features custom arenas and weapon restrictions.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">1v1</div>
+                            <div class="tag">Arena</div>
+                            <div class="tag">Headshot Only</div>
+                            <div class="tag">Leaderboard</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 165
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/ca.png" class="flag"> NA West #3 | Casual</h3>
+                            <div class="server-ip" onclick="copyToClipboard('na-west.csgo.net:27015')">
+                                na-west.csgo.net:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>de_vertigo</div>
+                    </div>
+                    <div>Casual</div>
+                    <div class="player-count">
+                        <span>14/20</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #1d976c, #93f9b9);"></div>
+                        <p class="server-description">
+                            Casual gameplay server with friendly community and active admins. Perfect for relaxed matches 
+                            and trying out new strategies. Features map voting and regular events.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">Casual</div>
+                            <div class="tag">10v10</div>
+                            <div class="tag">Map Voting</div>
+                            <div class="tag">Beginner Friendly</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-row">
+                    <div class="likes-count">
+                        <i class="fas fa-heart"></i> 142
+                    </div>
+                    <div class="server-info">
+                        <div class="server-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <div class="server-details">
+                            <h3><img src="https://flagcdn.com/16x12/se.png" class="flag"> Surf Paradise | Beginner</h3>
+                            <div class="server-ip" onclick="copyToClipboard('surf.se.csgo:27015')">
+                                surf.se.csgo:27015 <i class="fas fa-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-info">
+                        <div class="map-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div>surf_utopia</div>
+                    </div>
+                    <div>Surf</div>
+                    <div class="player-count">
+                        <span>9/16</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 56%"></div>
+                        </div>
+                    </div>
+                    <div class="join-btn">
+                        <button>JOIN</button>
+                    </div>
+                    <div class="expand-btn" onclick="toggleExpand(this)">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="server-expanded-content">
+                        <div class="server-banner" style="background: linear-gradient(90deg, #4b6cb7, #182848);"></div>
+                        <p class="server-description">
+                            Beginner-friendly surf server with easy maps and helpful community. Learn to surf and improve 
+                            your movement skills. Features timer, checkpoints, and custom maps.
+                        </p>
+                        <div class="server-tags">
+                            <div class="tag">Surf</div>
+                            <div class="tag">Movement</div>
+                            <div class="tag">Beginner</div>
+                            <div class="tag">Custom Maps</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button><i class="fas fa-chevron-right"></i></button>
+
+        </div>
+    </div>
+
+    <div class="stats-bar" id="statsBar">
+        <div class="stats-item">
+            <i class="fas fa-globe-americas"></i>
+            <span>Total Servers: <strong>1,284</strong></span>
+        </div>
+        <div class="stats-item">
+            <i class="fas fa-users"></i>
+            <span>Online Players: <strong>24,892</strong></span>
+        </div>
+        <div class="stats-item">
+            <i class="fas fa-bolt"></i>
+            <span>Your Ping: <strong>32ms</strong></span>
+        </div>
+    </div>
+
+    <script>
+        // Toggle stats bar visibility
+
+        document.getElementById('toggleStats').addEventListener('click', function() {
+            const statsBar = document.getElementById('statsBar');
+            statsBar.classList.toggle('hidden');
+        });
+
+        // Server expand/collapse functionality
+
+        function toggleExpand(button) {
+            const serverRow = button.closest('.server-row');
+            serverRow.classList.toggle('expanded');
+            
+            // Update the icon
+
+
+            const icon = button.querySelector('i');
+            if (serverRow.classList.contains('expanded')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        // Copy IP to clipboard
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                
+                // Alert user IP is copied
+                const originalText = event.target.closest('.server-ip').innerText;
+                event.target.closest('.server-ip').innerHTML = 'Copied! <i class="fas fa-check"></i>';
+                
+                setTimeout(() => {
+                    event.target.closest('.server-ip').innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // Fake playercount updates for preview
+        setInterval(() => {
+            const players = document.querySelectorAll('.player-count span');
+            players.forEach(player => {
+                const count = player.textContent.split('/');
+                const current = parseInt(count[0]);
+                const max = parseInt(count[1]);
+                
+                if (current < max && Math.random() > 0.7) {
+                    const newCount = current + 1;
+                    player.textContent = `${newCount}/${max}`;
+                    
+                    const progress = player.nextElementSibling.querySelector('.progress');
+                    progress.style.width = `${(newCount / max) * 100}%`;
+                }
+            });
+        }, 5000);
+        
+        // Make stats bar sticky
+        window.addEventListener('scroll', function() {
+            const statsBar = document.getElementById('statsBar');
+            const header = document.querySelector('.sticky-header');
+            const headerHeight = header.offsetHeight;
+            
+            if (window.scrollY > 50) {
+                statsBar.style.position = 'fixed';
+                statsBar.style.top = (headerHeight + 30) + 'px';
+                statsBar.style.left = '20px';
+                statsBar.style.right = '20px';
+                statsBar.style.zIndex = '99';
+            } else {
+                statsBar.style.position = 'relative';
+                statsBar.style.top = 'auto';
+                statsBar.style.left = 'auto';
+                statsBar.style.right = 'auto';
+            }
+        });
+    </script>
 </body>
-
 </html>
