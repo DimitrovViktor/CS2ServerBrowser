@@ -228,6 +228,7 @@ header {
 }
 
 .stats-bar {
+    z-index: 290;
     display: flex;
     justify-content: space-between;
     margin: 15px 0;
@@ -1185,3 +1186,121 @@ footer {
 .hidden {
     display: none;
 }
+
+/* ========================= */
+/* === NEW DAILY CLIP CSS === */
+/* ========================= */
+
+.clip-container {
+    max-width: 900px;
+    margin: 140px auto 60px;
+    padding: 30px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.clip-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    background: var(--text-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-frame {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(74, 134, 232, 0.5),
+        0 0 40px rgba(74, 134, 232, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clip-frame:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 30px rgba(74, 134, 232, 0.8),
+        0 0 60px rgba(74, 134, 232, 0.3);
+}
+
+.clip-frame iframe {
+    border: none;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: var(--border-radius);
+}
+
+.submitted-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 35px;
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.submitted-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 0 10px rgba(74, 134, 232, 0.5);
+}
+
+.submitted-text strong {
+    color: var(--text-primary);
+}
+
+.ad-space {
+    position: fixed;
+    top: 140px;
+    width: 260px;
+    height: 620px;
+    background: rgba(42, 42, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.ad-space.left {
+    left: 25px;
+}
+
+.ad-space.right {
+    right: 25px;
+}
+
+.ad-space:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(74, 134, 232, 0.5);
+}
+
+/* Hide ads on small screens */
+@media (max-width: 1300px) {
+    .ad-space {
+        display: none;
+    }
+}
+
+/* ========================= */
+/* === END DAILY CLIP CSS === */
+/* ========================= */
