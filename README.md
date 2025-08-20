@@ -1,5 +1,8 @@
 # CS2ServerBrowser
-A server browser for CS2.
+A server browser for CS2.  
+
+Urgent:  
+-add ad space to the other pages 
 
 Ideas/to-do list:  
 -captcha for server adding  
@@ -9,8 +12,7 @@ Ideas/to-do list:
 -report button for submitted servers incase of malicious or false server submissions  
 -minigames r/place, skin float guessr, daily challenges can be added towards the end  
 -start react and focusing on functionality once viko is home  
--create more splashes for the info boxes that fit the themes e.g. a surf themed splash  
--media/content section
+-create more splashes for the info boxes that fit the themes e.g. a surf themed splash   
 
 Things to research and challenges:  
 -how to live update server player count  
