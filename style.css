@@ -1304,3 +1304,307 @@ footer {
 /* ========================= */
 /* === END DAILY CLIP CSS === */
 /* ========================= */
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    margin: 40px 0;
+}
+
+.empty-state i {
+    font-size: 64px;
+    color: var(--text-tertiary);
+    margin-bottom: 20px;
+}
+
+.empty-state h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-server-btn {
+    background: var(--bg-secondary);
+    border: 2px solid var(--bg-quaternary);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-server-btn:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(74, 134, 232, 0.5);
+    color: var(--accent-primary);
+}
+
+.my-servers-header {
+    grid-template-columns: 7% 10% 30% 10% 10% 5% 8% 10% 5% 5%;
+}
+
+.my-server-row {
+    grid-template-columns: 5.5% 10% 30% 10% 10% 5% 8% 10% 5% 5%;
+}
+
+.server-rank, .server-category, .server-name-info, 
+.server-location, .server-game, .server-prime, 
+.server-mode, .server-actions {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.rank-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.rank-badge.vip {
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    color: #000;
+}
+
+.rank-badge.boost {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    color: #000;
+}
+
+.rank-badge:not(.vip):not(.boost) {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.server-category i {
+    margin-right: 8px;
+    color: var(--accent-primary);
+}
+
+.prime-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.prime-badge.prime {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+}
+
+.prime-badge.non-prime {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+.server-actions button {
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.server-actions button:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(74, 134, 232, 0.25);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.cancel-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cancel-btn:hover {
+    background: var(--bg-quaternary);
+}
+
+.save-btn {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.save-btn:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    border-radius: var(--border-radius);
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-right: auto;
+}
+
+.delete-btn:hover {
+    background: rgba(244, 67, 54, 0.3);
+}
+
+.nav-links a.active {
+    color: var(--accent-primary);
+    background: rgba(74, 134, 232, 0.15);
+}
+
+@media (max-width: 900px) {
+    .my-servers-header {
+        display: none !important;
+    }
+
+    .server-rank, .server-category, .server-name-info, 
+    .server-location, .server-game, .server-prime, 
+    .server-mode, .server-actions {
+        padding: 8px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+}
