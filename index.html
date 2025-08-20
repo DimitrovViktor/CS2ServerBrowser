@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="sticky-header">
         <header>
@@ -17,9 +19,10 @@
                     <h1>CS Server Browser</h1>
                 </div>
                 <div class="nav-links">
-                    <a href="#">Servers</a>
+                    <a href="index.html">Servers</a>
                     <a href="#">My Servers</a>
                     <a href="#">Options</a>
+                    <a href="dailyclip.html">Daily Clip</a>
                 </div>
             </div>
             <div class="controls">
@@ -38,8 +41,10 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <div class="profile-menu hidden" id="profileMenu">
-                        <button class="login-menu-btn" onclick="window.location.href='auth.html'"><i class="fas fa-sign-in-alt"></i> Log In</button>
-                        <button class="register-menu-btn" onclick="window.location.href='auth.html?register'"><i class="fas fa-user-plus"></i> Register</button>
+                        <button class="login-menu-btn" onclick="window.location.href='auth.html'"><i
+                                class="fas fa-sign-in-alt"></i> Log In</button>
+                        <button class="register-menu-btn" onclick="window.location.href='auth.html?register'"><i
+                                class="fas fa-user-plus"></i> Register</button>
                         <button class="settings-menu-btn"><i class="fas fa-cog"></i> Settings</button>
                     </div>
                 </div>
@@ -159,7 +164,8 @@
                             <i class="fas fa-crown"></i>
                         </div>
                         <div class="server-details">
-                            <h3><img src="https://flagcdn.com/16x12/eu.png" class="flag"> Official EU #1 | Competitive</h3>
+                            <h3><img src="https://flagcdn.com/16x12/eu.png" class="flag"> Official EU #1 | Competitive
+                            </h3>
                             <div class="server-ip" onclick="copyToClipboard('csgo-eu1.valve.net:27015')">
                                 csgo-eu1.valve.net:27015 <i class="fas fa-copy"></i>
                             </div>
@@ -187,8 +193,9 @@
                     <div class="server-expanded-content">
                         <div class="server-banner"></div>
                         <p class="server-description">
-                            Official Valve competitive server with 128-tick rate, VAC secured, and premium matchmaking. 
-                            This server features low latency and dedicated resources for the best competitive experience.
+                            Official Valve competitive server with 128-tick rate, VAC secured, and premium matchmaking.
+                            This server features low latency and dedicated resources for the best competitive
+                            experience.
                         </p>
                         <div class="server-tags">
                             <div class="tag">128-Tick</div>
@@ -237,7 +244,7 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #1e3c72, #2a5298);"></div>
                         <p class="server-description">
-                            Premium Wingman server with competitive settings and VAC security. Perfect for 2v2 matches 
+                            Premium Wingman server with competitive settings and VAC security. Perfect for 2v2 matches
                             with friends. Features map rotations and dedicated anti-cheat.
                         </p>
                         <div class="server-tags">
@@ -286,7 +293,8 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #0f9b0f, #3cba92);"></div>
                         <p class="server-description">
-                            Premium retake server with competitive settings. Practice your retake skills with instant respawns 
+                            Premium retake server with competitive settings. Practice your retake skills with instant
+                            respawns
                             and weapon upgrades. Features 128-tick rate and dedicated admin support.
                         </p>
                         <div class="server-tags">
@@ -335,7 +343,8 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #8e0e00, #1f1c18);"></div>
                         <p class="server-description">
-                            Premium competitive server for serious players. Features 128-tick rate, advanced stats tracking, 
+                            Premium competitive server for serious players. Features 128-tick rate, advanced stats
+                            tracking,
                             and regular tournaments with prize pools. Requires Prime status.
                         </p>
                         <div class="server-tags">
@@ -404,7 +413,7 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #3a7bd5, #00d2ff);"></div>
                         <p class="server-description">
-                            Fast-paced deathmatch server with weapon respawns and instant action. Perfect for warming up 
+                            Fast-paced deathmatch server with weapon respawns and instant action. Perfect for warming up
                             before competitive matches. Features custom weapon loadouts and headshot-only mode.
                         </p>
                         <div class="server-tags">
@@ -453,7 +462,7 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #ff416c, #ff4b2b);"></div>
                         <p class="server-description">
-                            Competitive 1v1 arena with headshot-only mode. Challenge players to duels and climb the 
+                            Competitive 1v1 arena with headshot-only mode. Challenge players to duels and climb the
                             leaderboard. Features custom arenas and weapon restrictions.
                         </p>
                         <div class="server-tags">
@@ -502,7 +511,8 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #1d976c, #93f9b9);"></div>
                         <p class="server-description">
-                            Casual gameplay server with friendly community and active admins. Perfect for relaxed matches 
+                            Casual gameplay server with friendly community and active admins. Perfect for relaxed
+                            matches
                             and trying out new strategies. Features map voting and regular events.
                         </p>
                         <div class="server-tags">
@@ -551,7 +561,8 @@
                     <div class="server-expanded-content">
                         <div class="server-banner" style="background: linear-gradient(90deg, #4b6cb7, #182848);"></div>
                         <p class="server-description">
-                            Beginner-friendly surf server with easy maps and helpful community. Learn to surf and improve 
+                            Beginner-friendly surf server with easy maps and helpful community. Learn to surf and
+                            improve
                             your movement skills. Features timer, checkpoints, and custom maps.
                         </p>
                         <div class="server-tags">
@@ -615,7 +626,7 @@
     </footer>
 
     <script>
-        document.getElementById('toggleStats').addEventListener('click', function() {
+        document.getElementById('toggleStats').addEventListener('click', function () {
             const statsBar = document.getElementById('statsBar');
             statsBar.classList.toggle('hidden');
         });
@@ -623,7 +634,7 @@
         function toggleExpand(button) {
             const serverRow = button.closest('.server-row');
             serverRow.classList.toggle('expanded');
-            
+
             const icon = button.querySelector('i');
             if (serverRow.classList.contains('expanded')) {
                 icon.classList.remove('fa-chevron-down');
@@ -638,7 +649,7 @@
             navigator.clipboard.writeText(text).then(() => {
                 const originalText = event.target.closest('.server-ip').innerText;
                 event.target.closest('.server-ip').innerHTML = 'Copied! <i class="fas fa-check"></i>';
-                
+
                 setTimeout(() => {
                     event.target.closest('.server-ip').innerHTML = originalText;
                 }, 2000);
@@ -653,22 +664,22 @@
                 const count = player.textContent.split('/');
                 const current = parseInt(count[0]);
                 const max = parseInt(count[1]);
-                
+
                 if (current < max && Math.random() > 0.7) {
                     const newCount = current + 1;
                     player.textContent = `${newCount}/${max}`;
-                    
+
                     const progress = player.nextElementSibling.querySelector('.progress');
                     progress.style.width = `${(newCount / max) * 100}%`;
                 }
             });
         }, 5000);
-        
-        window.addEventListener('scroll', function() {
+
+        window.addEventListener('scroll', function () {
             const statsBar = document.getElementById('statsBar');
             const header = document.querySelector('.sticky-header');
             const headerHeight = header.offsetHeight;
-            
+
             if (window.scrollY > 50) {
                 statsBar.style.position = 'fixed';
                 statsBar.style.top = (headerHeight + 30) + 'px';
@@ -684,14 +695,14 @@
         });
 
         // Profile menu toggle
-        document.getElementById('profileBtn').addEventListener('click', function(e) {
+        document.getElementById('profileBtn').addEventListener('click', function (e) {
             e.stopPropagation();
             const menu = document.getElementById('profileMenu');
             menu.classList.toggle('hidden');
         });
 
         // close menu when clicking elsewhere
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const menu = document.getElementById('profileMenu');
             if (!menu.contains(e.target) && !e.target.closest('.profile-btn')) {
                 menu.classList.add('hidden');
@@ -699,4 +710,5 @@
         });
     </script>
 </body>
+
 </html>
