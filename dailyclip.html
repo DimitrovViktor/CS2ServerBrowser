@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRV | Clip of the Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="sticky-header">
+        <header>
+            <div style="display: flex; align-items: center;">
+                <div class="logo">
+                    <i class="fas fa-server"></i>
+                    <h1>CS Server Browser</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Servers</a>
+                    <a href="#">My Servers</a>
+                    <a href="#">Options</a>
+                    <a href="dailyclip.html">Daily Clip</a>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search servers...">
+                </div>
+                <button class="filter-btn">
+                    <i class="fas fa-filter"></i>
+                </button>
+                <button class="toggle-stats-btn" id="toggleStats">
+                    <i class="fas fa-chart-bar"></i>
+                </button>
+                <div class="user-controls">
+                    <button class="profile-btn" id="profileBtn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <div class="profile-menu hidden" id="profileMenu">
+                        <button class="login-menu-btn" onclick="window.location.href='auth.html'"><i
+                                class="fas fa-sign-in-alt"></i> Log In</button>
+                        <button class="register-menu-btn" onclick="window.location.href='auth.html?register'"><i
+                                class="fas fa-user-plus"></i> Register</button>
+                        <button class="settings-menu-btn"><i class="fas fa-cog"></i> Settings</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <script>
+        document.getElementById('toggleStats').addEventListener('click', function () {
+            const statsBar = document.getElementById('statsBar');
+            statsBar.classList.toggle('hidden');
+        });    
+    </script>
+
+    <!-- Clip of the Day Section -->
+    <div class="clip-container">
+        <h2 class="clip-title">🎥 Clip of the Day</h2>
+
+        <!-- Video Frame -->
+        <div class="clip-frame">
+            <iframe src="https://www.youtube.com/embed/_iW-6qsfSyw" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="submitted-by">
+            <img src="images/sillypfp.png" alt="User Avatar" class="submitted-avatar">
+            <span class="submitted-text">Submitted by <strong>sillycat25</strong></span>
+        </div>
+    </div>
+
+    <!-- Left Ad -->
+    <div class="ad-space left">
+        <span>Ad Space</span>
+    </div>
+
+    <!-- Right Ad -->
+    <div class="ad-space right">
+        <span>Ad Space</span>
+    </div>
+
+    <div class="stats-bar" id="statsBar">
+        <div class="stats-item">
+            <i class="fas fa-globe-americas"></i>
+            <span>Total Servers: <strong>1,284</strong></span>
+        </div>
+        <div class="stats-item">
+            <i class="fas fa-users"></i>
+            <span>Online Players: <strong>24,892</strong></span>
+        </div>
+        <div class="stats-item">
+            <i class="fas fa-bolt"></i>
+            <span>Your Ping: <strong>32ms</strong></span>
+        </div>
+    </div>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-server"></i>
+                <span>CS Server Browser</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-steam"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 CSRV. All rights reserved. Counter-Strike is a registered trademark of Valve Corporation.
+        </div>
+    </footer>
+
+    <script>
+        // Toggle profile menu
+        document.getElementById('profileBtn').addEventListener('click', function (e) {
+            e.stopPropagation();
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close profile menu when clicking elsewhere
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('profileMenu');
+            if (!menu.contains(e.target) && !e.target.closest('.profile-btn')) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
