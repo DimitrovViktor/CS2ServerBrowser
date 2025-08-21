@@ -11,7 +11,12 @@ Ideas/to-do list:
 -autochecks for things like 5v5 category cant have a server where the max is 64 players  
 -report button for submitted servers incase of malicious or false server submissions  
 -minigames r/place, skin float guessr, daily challenges can be added towards the end  
--start react and focusing on functionality once viko is home  
+-start react and focusing on functionality once viko is home
+ react tasks:
+ - split what we already have in the preview into separate components
+ - add functionality to components
+ - call them in the pages where they will be used
+ - optimize for speed and efficiency
 -create more splashes for the info boxes that fit the themes e.g. a surf themed splash   
 
 Things to research and challenges:  
