@@ -15,6 +15,9 @@ Ideas/to-do list:
  react tasks:
  - split what we already have in the preview into separate components
  - add functionality to components
+   - fetch server info such as players, current map, player ping etc.
+   - display info for map by showing images
+   - make this process repeat at an interval of seconds (update every 5-30 seconds)
  - call them in the pages where they will be used
  - optimize for speed and efficiency
 -create more splashes for the info boxes that fit the themes e.g. a surf themed splash   
