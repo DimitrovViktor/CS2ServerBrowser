@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="sticky-header">
         <header>
@@ -39,8 +41,10 @@
                         <i class="fas fa-user"></i>
                     </button>
                     <div class="profile-menu hidden" id="profileMenu">
-                        <button class="login-menu-btn" onclick="window.location.href='auth.html'"><i class="fas fa-sign-in-alt"></i> Log In</button>
-                        <button class="register-menu-btn" onclick="window.location.href='auth.html?register'"><i class="fas fa-user-plus"></i> Register</button>
+                        <button class="login-menu-btn" onclick="window.location.href='auth.html'"><i
+                                class="fas fa-sign-in-alt"></i> Log In</button>
+                        <button class="register-menu-btn" onclick="window.location.href='auth.html?register'"><i
+                                class="fas fa-user-plus"></i> Register</button>
                         <button class="settings-menu-btn"><i class="fas fa-cog"></i> Settings</button>
                     </div>
                 </div>
@@ -240,6 +244,17 @@
         </div>
     </div>
 
+    <body class="myservers-page">
+        <!-- Left Ad -->
+        <div class="ad-space left">
+            <span>Ad Space</span>
+        </div>
+
+        <!-- Right Ad -->
+        <div class="ad-space right">
+            <span>Ad Space</span>
+        </div>
+    </body>
     <div class="stats-bar" id="statsBar">
         <div class="stats-item">
             <i class="fas fa-globe-americas"></i>
@@ -324,7 +339,7 @@
 
         function renderServerList() {
             serverListContainer.innerHTML = '';
-            
+
             myServers.forEach(server => {
                 const serverRow = document.createElement('div');
                 serverRow.className = 'server-row my-server-row';
@@ -424,7 +439,7 @@
                 document.getElementById('editServerTags').value = server.tags || '';
                 document.getElementById('editServerDescription').value = server.description || '';
                 document.getElementById('editServerBanner').value = server.banner || '';
-                
+
                 editServerModal.classList.remove('hidden');
             }
         }
@@ -443,7 +458,7 @@
                 rank: '',
                 location: ''
             };
-            
+
             myServers.push(newServer);
             localStorage.setItem('myServers', JSON.stringify(myServers));
             updateServerCounts();
@@ -479,7 +494,7 @@
         function toggleExpand(button) {
             const serverRow = button.closest('.server-row');
             serverRow.classList.toggle('expanded');
-            
+
             const icon = button.querySelector('i');
             if (serverRow.classList.contains('expanded')) {
                 icon.classList.remove('fa-chevron-down');
@@ -549,14 +564,14 @@
         });
 
 
-        document.getElementById('profileBtn').addEventListener('click', function(e) {
+        document.getElementById('profileBtn').addEventListener('click', function (e) {
             e.stopPropagation();
             const menu = document.getElementById('profileMenu');
             menu.classList.toggle('hidden');
         });
 
 
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const menu = document.getElementById('profileMenu');
             if (!menu.contains(e.target) && !e.target.closest('.profile-btn')) {
                 menu.classList.add('hidden');
@@ -564,10 +579,11 @@
         });
 
 
-        document.getElementById('toggleStats').addEventListener('click', function() {
+        document.getElementById('toggleStats').addEventListener('click', function () {
             const statsBar = document.getElementById('statsBar');
             statsBar.classList.toggle('hidden');
         });
     </script>
 </body>
+
 </html>
