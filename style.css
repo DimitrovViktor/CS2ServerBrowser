@@ -1364,9 +1364,14 @@ footer {
     grid-template-columns: 5.5% 10% 30% 10% 10% 5% 8% 10% 5% 5%;
 }
 
-.server-rank, .server-category, .server-name-info, 
-.server-location, .server-game, .server-prime, 
-.server-mode, .server-actions {
+.server-rank,
+.server-category,
+.server-name-info,
+.server-location,
+.server-game,
+.server-prime,
+.server-mode,
+.server-actions {
     display: flex;
     align-items: center;
     padding: 5px 0;
@@ -1596,9 +1601,14 @@ footer {
         display: none !important;
     }
 
-    .server-rank, .server-category, .server-name-info, 
-    .server-location, .server-game, .server-prime, 
-    .server-mode, .server-actions {
+    .server-rank,
+    .server-category,
+    .server-name-info,
+    .server-location,
+    .server-game,
+    .server-prime,
+    .server-mode,
+    .server-actions {
         padding: 8px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -1607,4 +1617,23 @@ footer {
         width: 95%;
         margin: 20px;
     }
+}
+
+/* My Servers Page Ad-Space Customization */
+body.myservers-page .ad-space {
+    width: 200px;
+    height: 400px;
+}
+
+/* =============================== */
+/* === INDEX PAGE AD SPACE FIX === */
+/* =============================== */
+
+body.index-page .ad-space {
+    position: absolute;
+    /* Makes them scroll instead of staying fixed */
+    width: 220px;
+    /* Slightly smaller than dailyclip ads */
+    height: 880px;
+    margin-top: 222px;
 }
