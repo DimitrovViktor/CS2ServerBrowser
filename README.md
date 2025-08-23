@@ -1,8 +1,9 @@
 # CS2ServerBrowser
 A server browser for CS2.  
 
-Urgent:  
--add ad space to the other pages 
+Urgent:   
+-fix navbar bug where both daily clips and my servers is highlighted when on the my servers page  
+-fix adspace to make it dynamic when adding/removing servers on my servers page  
 
 Ideas/to-do list:  
 -captcha for server adding  
