@@ -2,8 +2,6 @@
 A server browser for CS2.  
 
 Urgent:   
--fix navbar bug where both daily clips and my servers is highlighted when on the my servers page  
--fix adspace to make it dynamic when adding/removing servers on my servers page  
 -further discussion on adding functionality is required  
 
 Ideas/to-do list:  
