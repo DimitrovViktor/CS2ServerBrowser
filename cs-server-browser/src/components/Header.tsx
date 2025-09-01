@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaServer, FaSearch, FaFilter, FaChartBar, FaUser, FaSignInAlt, FaUserPlus, FaCog } from 'react-icons/fa';
-import AuthPage from '../pages/AuthPage';
+import Authentication from './Authentication';
 import { useAuth } from '../context/AuthContext';
 import logoImg from '../../images/logos/logo.png';
 import StatsBar from './StatsBar';
@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ searchTerm, setSearchTerm }) => {
       {authModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <AuthPage initialMode={authMode} onClose={() => setAuthModalOpen(false)} />
+            <Authentication initialMode={authMode} onClose={() => setAuthModalOpen(false)} />
           </div>
         </div>
       )}
