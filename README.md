@@ -3,6 +3,7 @@ A server browser for CS2.
 
 Urgent:   
 -further discussion on adding functionality is required  
+-add more game modes, discuss which game modes to add on the index page   
 
 Ideas/to-do list:  
 -captcha for server adding  
