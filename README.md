@@ -69,12 +69,6 @@ Servers display the following:
   - Gamemode
   - Players (real time updates)
   - Action - join button, like button, report button and expand button (currently in development)
-
-  | Country | Server Name | IP Address | Map | Gamemode | Players | Actions |
-|:-------:|-------------|------------|-----|----------|---------|---------|
-| :us:    | Server Alpha | `123.45.67.89` | `de_dust2` | Competitive | `12/24` | [Join](#) :thumbsup: :warning: :arrow_down_small: |
-| :de:    | Bravo Casual | `98.76.54.321` | `cs_office` | Casual | `14/20` | [Join](#) :thumbsup: :warning: :arrow_down_small: |
-| :fr:    | Delta Retakes | `55.66.77.888` | `de_mirage` | Retakes | `5/10` | [Join](#) :thumbsup: :warning: :arrow_down_small: |
   
 Extra details are shown when expanded:
   - Server banner (Currently availabe for both, possibly a paid feature on release)
