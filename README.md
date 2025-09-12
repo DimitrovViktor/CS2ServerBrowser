@@ -2,11 +2,17 @@
 
 A CS(Counter Strike) server browser with live server information (player count etc.), server customization and daily clips. 
 
+
+![Main Page](https://github.com/user-attachments/assets/07524740-744a-462b-b9a1-e6416b76a94a)
+
 ---
 
 ## Pages and components
 
 ### 0. Nav bar
+
+![Nav Bar](https://github.com/user-attachments/assets/d9594e1a-bd4c-46c2-b858-32a5859d9b0e)
+
  - **Pages**
 
  Servers - allows the user to look at all registered servers
@@ -21,6 +27,8 @@ A CS(Counter Strike) server browser with live server information (player count e
 - Statistics button - displays real time server statistics for the website (shows live players and live servers)
 - Profile button - allows the user to log in/register via a modal
 - Login/Registration modal
+![Registration Modal](https://github.com/user-attachments/assets/2202ebea-4097-4cbb-9d14-01ec022ffcf1)
+![Login Modal](https://github.com/user-attachments/assets/34280ce6-1ec6-411c-b427-2e2202bab51a)
   - The user can log in/register using steam, google and discord (currently in development)
   - Registration requires the user to give the following information:
     - Username
@@ -32,6 +40,8 @@ A CS(Counter Strike) server browser with live server information (player count e
     - Password
 
 ### 1. Server list
+
+![Server List](https://github.com/user-attachments/assets/bd241c15-ccb5-41e6-8c98-bddef10e0690)
 
 - **Server Category Boxes**  
 - Each category displays its name, number of servers and number of players online
@@ -59,6 +69,12 @@ Servers display the following:
   - Gamemode
   - Players (real time updates)
   - Action - join button, like button, report button and expand button (currently in development)
+
+  | Country | Server Name | IP Address | Map | Gamemode | Players | Actions |
+|:-------:|-------------|------------|-----|----------|---------|---------|
+| :us:    | Server Alpha | `123.45.67.89` | `de_dust2` | Competitive | `12/24` | [Join](#) :thumbsup: :warning: :arrow_down_small: |
+| :de:    | Bravo Casual | `98.76.54.321` | `cs_office` | Casual | `14/20` | [Join](#) :thumbsup: :warning: :arrow_down_small: |
+| :fr:    | Delta Retakes | `55.66.77.888` | `de_mirage` | Retakes | `5/10` | [Join](#) :thumbsup: :warning: :arrow_down_small: |
   
 Extra details are shown when expanded:
   - Server banner (Currently availabe for both, possibly a paid feature on release)
@@ -75,7 +91,12 @@ Extra details are shown when expanded:
 
 ### 2. My Servers
 
-- **Add Server Button**  
+![My Servers](https://github.com/user-attachments/assets/3ecfe576-8f68-4c3e-a9d1-8e161ba4365a)
+
+- **Add Server Button** 
+
+![Adding Servers](https://github.com/user-attachments/assets/e496c413-848d-41d8-8164-0e96a40d62bf)
+
 - Allows users to add servers and requires them to give the following information required for server registration:
   - Name
   - IP Address
@@ -87,6 +108,7 @@ Extra details are shown when expanded:
   - Tags (comma separated)
   - Server Banner (image/gif)
   - Gamemode
+
 - **My Servers List**  
 - A list of all added servers by the user is shown (if any exist)
 - Basic server information is shown including:
