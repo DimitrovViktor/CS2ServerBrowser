@@ -127,7 +127,7 @@ Extra details are shown when expanded:
 
 ---
 
-### Tasks in progress:
+### TO-DO:
 
 - **All Pages**
 - Add ad spaces where missing
