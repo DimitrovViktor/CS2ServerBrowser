@@ -27,8 +27,11 @@ A CS(Counter Strike) server browser with live server information (player count e
 - Statistics button - displays real time server statistics for the website (shows live players and live servers)
 - Profile button - allows the user to log in/register via a modal
 - Login/Registration modal
+  
 ![Registration Modal](https://github.com/user-attachments/assets/2202ebea-4097-4cbb-9d14-01ec022ffcf1)
+
 ![Login Modal](https://github.com/user-attachments/assets/34280ce6-1ec6-411c-b427-2e2202bab51a)
+
   - The user can log in/register using steam, google and discord (currently in development)
   - Registration requires the user to give the following information:
     - Username
