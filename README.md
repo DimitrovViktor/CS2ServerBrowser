@@ -2,6 +2,7 @@
 
 A CS(Counter Strike) server browser with live server information (player count etc.), server customization and daily clips. 
 
+---
 
 ![Main Page](https://github.com/user-attachments/assets/07524740-744a-462b-b9a1-e6416b76a94a)
 
